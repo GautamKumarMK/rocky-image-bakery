@@ -68,7 +68,8 @@ if [ -f "${INSTANCE_DISK}" ]; then
   exit 1
 fi
 echo "Creating CoW overlay disk for ${VM_HOSTNAME}..."
-qemu-img create -f qcow2 -F qcow2 -b "${GOLDEN_IMAGE}" "${INSTANCE_DISK}"
+RESOLVED_GOLDEN="$(readlink -f "${GOLDEN_IMAGE}")"
+qemu-img create -f qcow2 -F qcow2 -b "${RESOLVED_GOLDEN}" "${INSTANCE_DISK}"
 
 # ── 4. Provision the instance ───────────────────────────────────────
 echo "Provisioning ${VM_HOSTNAME} (CoW overlay on golden image, golden untouched)..."
