@@ -265,7 +265,7 @@ build {
 
   provisioner "shell" {
     inline = [
-      "sudo install -m 644 /tmp/sshd-hardening.conf /etc/ssh/sshd_config.d/99-hardening.conf",
+      "sudo install -m 644 /tmp/sshd-hardening.conf /etc/ssh/sshd_config.d/00-hardening.conf",
       "sudo install -m 644 /tmp/ssh-banner.txt       /etc/ssh/banner.txt",
       "sudo install -m 644 /tmp/sysctl-hardening.conf /etc/sysctl.d/99-hardening.conf",
       "sudo install -m 644 /tmp/fail2ban-jail.local  /etc/fail2ban/jail.local",

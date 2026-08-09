@@ -31,7 +31,7 @@ port:
       - 0.0.0.0
 
 file:
-  /etc/ssh/sshd_config.d/99-hardening.conf:
+  /etc/ssh/sshd_config.d/00-hardening.conf:
     exists: true
     mode: "0644"
     owner: root
